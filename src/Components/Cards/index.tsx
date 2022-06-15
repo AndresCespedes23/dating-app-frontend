@@ -1,8 +1,9 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { useState, useEffect } from 'react';
+import TinderCard from 'react-tinder-card';
 import styles from './cards.module.css';
 
-const INITIAL_STATE = [
+const db = [
   {
     name: 'Random Guy',
     imgUrl:
@@ -30,21 +31,22 @@ interface Person {
   imgUrl: string;
 }
 
-function DatingCards() {
+function Cards() {
   const [people, setPeople] = useState<Array<Person>>([]);
 
   useEffect(() => {
-    setPeople(INITIAL_STATE);
+    setPeople(db);
   }, []);
 
   return (
-    <div className="datingCards">
+    <div>
       <div className={styles.cardsContainer}>
         {people.map((person) => (
-          <div
+          <TinderCard
             className={styles.swipe}
             key={person.name}
           >
+
             <div
               style={{
                 backgroundImage: `url(${person.imgUrl})`,
@@ -53,11 +55,11 @@ function DatingCards() {
             >
               <h3>{person.name}</h3>
             </div>
-          </div>
+          </TinderCard>
         ))}
       </div>
     </div>
   );
 }
 
-export default DatingCards;
+export default Cards;

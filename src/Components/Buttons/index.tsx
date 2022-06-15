@@ -6,7 +6,7 @@ import StarRateIcon from '@mui/icons-material/StarRate';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FlashOnIcon from '@mui/icons-material/FlashOn';
 import IconButton from '@mui/material/IconButton';
-import styles from './swipe.module.css';
+import styles from './buttons.module.css';
 
 function SwipeButtons() {
   return (
